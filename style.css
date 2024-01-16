@@ -1,65 +1,150 @@
 @font-face {
     font-family: futura;
-    src: url(./fonts/Futura-Bold.ttf) ;
+    src: url(./fonts/Futura-Bold.ttf);
 }
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Gilroy';
 }
-*::selection{
+
+*::selection {
     color: #fff;
-    background-color:rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0);
 }
 
-html, body{
+html,
+body {
 
     height: 100%;
     width: 100%;
     background-color: #F7F7F7;
     overflow-x: hidden;
 }
-#page1{
+#nav {
+    /* height: 100px; */
+    width: 100%;
+    /* background-color: burlywood; */
+    position: fixed;
+    z-index: 99;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 25px;
+}
+
+#nav #nav-part2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+#links {
+    padding: 10px;
+}
+
+#nav-part1 {
+    /* background-color: RED; */
+    height: 82px;
+    overflow: hidden;
+}
+
+#nav-part1 svg {
+    display: block;
+}
+
+#nav-part2 #links a {
+    text-transform: uppercase;
+
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 14px;
+    margin: 0 20px;
+}
+
+#icons {
+    padding: 10px;
+    border-radius: 50px;
+    background-color: #F7F7F7;
+}
+
+#nav-part2 #icons i {
+    font-size: 18px;
+    margin: 0 20px;
+    font-weight: 100;
+}
+
+
+
+#cursor {
+    height: 180px;
+    width: 180px;
+    background-color: rgba(156, 184, 184, 0.356);
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%) scale(0);
+ 
+}
+
+#page1 {
     min-height: 100vh;
     position: relative;
     width: 100%;
     padding-top: 23vh;
-   
+
 }
-#page1 h1{
+
+#page1 h1 {
     font-size: 16.5vw;
     font-family: futura;
     text-transform: uppercase;
     line-height: 14vw;
-    display:flex;
+    display: flex;
     text-align: center;
     justify-content: center;
     font-weight: 400;
     letter-spacing: -17px;
 }
-#cookbook{
-    /* background-color: antiquewhite; */
-    /* padding: 0 2vw; */
+
+#cookbook {
+    height: 100vh;
+    width: 100%;
+    /* background-color: grey; */
+    margin-top: 1vw;
     position: relative;
-    width: 100vw;
-    /* display: flex;
+    display: flex;
     justify-content: center;
-    align-items: center; */
-    /* background-color: antiquewhite; */
+    align-items: center;
+    overflow: hidden;
+    scale: 1;
+    /* padding: 0 50vh; */
 }
 
-/* #cookbook img{
-    object-position: 50% 50%; 
-    opacity: 1;
-} */
+#cookbook img {
+    /* height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: fixed; */
+    /* max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    position: fixed; */
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: relative;
+}
 
-#cookbook #buynow{
-    
+#buynow {
+
     padding: 4.5vh 2vw;
     height: 13vh;
     width: 13vh;
-    background-color: rgb(90, 150, 120);
+    background-color: rgba(156, 156, 156, 0.663);
     color: #fff;
     font-size: 2vh;
     font-family: futura;
@@ -68,6 +153,260 @@ html, body{
     justify-content: center;
     text-align: center;
     border-radius: 50%;
-    opacity: 0;
-    scale: 0;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+#page2 {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 3vw 1.3vw;
+    justify-content: space-between;
+    /* background-color: aqua; */
+}
+
+#page2 .elem {
+    height: 100%;
+    width: 32.5%;
+    /* background-color: red; */
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#page2 .elem img {
+    /* height: 100%;
+    width: 100%;
+    object-fit: cover;*/
+    scale: 1.1;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: relative;
+}
+
+.elem .dets {
+    height: 50px;
+    width: 50%;
+    border-radius: 50px;
+    position: absolute;
+    z-index: 9;
+    background: rgb(160, 195, 171);
+}
+
+.elem .dets:hover {
+    height: 200px;
+
+}
+
+#page3 {
+    width: 100%;
+    min-height: 120vh;
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    /* background-color: wheat; */
+}
+
+.child {
+    height: 54vh;
+    width: 38vw;
+    /* background-color: red; */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.child img {
+    height: 100%;
+}
+
+@media (max-width:600px) {
+
+    #cursor{
+        display: none;
+    }
+
+    #nav {
+        /* height: 100px; */
+        width: 100%;
+        /* background-color: burlywood; */
+        position: fixed;
+        z-index: 99;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 15px;
+    }
+    
+    #nav #nav-part2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+    }
+    
+    #links {
+        padding: 10px;
+        display: none;
+    }
+    
+    #nav-part1 {
+        /* background-color: RED; */
+        height: 69px;
+        overflow: hidden;
+    }
+    
+    #nav-part1 svg {
+        display: block;
+        height: 69px;
+        width: 80px;
+    }
+    #nav #two-good{
+        height: 40px;
+        margin-left: -20px;
+    }
+
+    #nav-part2 #links a {
+        text-transform: uppercase;
+    
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+        font-size: 14px;
+        margin: 0 20px;
+    }
+    
+    #icons {
+        padding: 9px;
+        border-radius: 50px;
+        background-color: #F7F7F7;
+    }
+    
+    #nav-part2 #icons i {
+        font-size: 15px;
+        margin: 0 20px;
+        font-weight: 100;
+    }
+
+    #page1 {
+        min-height: 70vh;
+        width: 100%;
+        padding: 0 2vw;
+        padding-top: 23.7vh;
+    }
+
+    #page1 h1 {
+        font-size: 16vw;
+        font-family: futura;
+        text-transform: uppercase;
+        line-height: 13.4vw;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        font-weight: 400;
+        letter-spacing: -5px;
+    }
+
+    #cookbook {
+        /* height: 65vh;
+        margin: -0;
+        padding: 0; */
+        height: 38vh;
+        padding-top: 50px;
+
+    }
+
+    #cookbook img {
+        /* height: 100%;
+        width: 100%;
+        object-fit: cover;
+        position: fixed; */
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+        position: relative;
+        scale: 1.8;
+        /* padding-top: -90px; */
+    }
+
+    #cookbook #buynow {
+        display: none;
+        
+    }
+
+    #page2 {
+        min-height: 100vh;
+        width: 100%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 1.3vw;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+        justify-content: space-between;
+
+        /* background-color: aqua; */
+    }
+
+    #page2 {
+        min-height: 100vh;
+        width: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding: 5vw 3vw;
+        flex-direction: column;
+        justify-content: space-between;
+        /* background-color: red; */
+    }
+
+    #page2 .elem {
+        height:63vh;
+        width: 100%;
+        /* background-color: red; */
+        overflow: hidden;
+        margin-bottom: 3vw;
+        position: relative;
+        display: flex;
+        padding: 0vh 5vw;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #page3 {
+        width: 100%;
+        min-height: 120vh;
+        position: relative;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+        /* background-color: wheat; */
+    }
+    
+    .child {
+        height: 54vh;
+        width: 88vw;
+        /* background-color: red; */
+        position: relative;
+        display: flex;
+        padding: 15vw;
+        align-items: center;
+        justify-content: center;
+    
+    }
+    
+    .child img {
+        height: 100%;
+    }
 }
